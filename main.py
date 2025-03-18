@@ -640,6 +640,9 @@ hide_default_format = """
             border-radius: 7px;
             height: 400px;
         }
+        path.leaflet-interactive:focus {
+            outline: none;
+        }
     </style>
 """
 
