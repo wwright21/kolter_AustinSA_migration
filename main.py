@@ -20,15 +20,13 @@ state_var = "Texas"
 stateAbbrev_var = "TX"
 map_starting_zoom = 8,
 map_starting_extent = [30.01, -98.030]
-county_options = ["Bexar", "Comal", "Hays", "Travis", "Williamson"]
-custom_label_positions = {
-    county_options[0]: [29.469069508193478, -98.5289230854637],
-    county_options[1]: [29.806964308068814, -98.2815730792313],
-    county_options[2]: [30.063141376825435, -98.03477299701542],
-    county_options[3]: [30.333522857326845, -97.86466288099463],
-    county_options[4]: [30.644566323586655, -97.61907329798181]
-}
-
+county_options = [
+    "Bexar",
+    "Comal",
+    "Hays",
+    "Travis",
+    "Williamson"
+]
 
 # sidebar containing st.multiselect for county selection
 with st.sidebar:
@@ -176,7 +174,6 @@ m = folium.Map(
 folium.GeoJson(
     county_outlines,
     tooltip=folium.features.GeoJsonTooltip(fields=['NAME'], labels=False),
-    # interactive=False,
 ).add_to(m)
 
 # add the map to the Streamlit app
@@ -360,7 +357,6 @@ else:
         </div>
         """,
         unsafe_allow_html=True)
-
 
 # get the top metros, counties
 metro_rollup = df.groupby('aux_GeoRollup')[

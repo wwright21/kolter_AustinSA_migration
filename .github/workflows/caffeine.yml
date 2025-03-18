@@ -2,8 +2,8 @@ name: Add Timestamp File
 
 on:
   schedule:
-    - cron: "0 7 * * *" # Runs daily at midnight UTC (adjust as needed)
-  workflow_dispatch: # Allows manual triggering of the workflow
+    - cron: "0 7,19 * * *"
+  workflow_dispatch:
 
 jobs:
   create-and-commit:
